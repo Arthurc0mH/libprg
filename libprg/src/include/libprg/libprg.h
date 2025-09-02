@@ -1,6 +1,6 @@
 #ifndef LIBPRG_LIBPRG_H
 #define LIBPRG_LIBPRG_H
-#define MAX_PILHA 10
+#define MAX_PILHA 100
 
 typedef struct {
     double value;

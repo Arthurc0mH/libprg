@@ -4,7 +4,7 @@ An example to demonstrate how to organize files for writing a library in the C l
 
 ## Project structure
 
-```bash
+```bash 
 .
 |-- CMakeLists.txt
 |-- LICENSE
