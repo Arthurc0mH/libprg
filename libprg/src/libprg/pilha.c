@@ -43,3 +43,7 @@ int consultar_topo(Pilha *p, int *valor_topo) {
     *valor_topo = p->dados[p->topo];
     return 1; //sucesso
 }
+
+int tamanho_pilha(Pilha *p) {
+    return p->topo + 1;
+}
