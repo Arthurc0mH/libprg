@@ -10,3 +10,9 @@ int pilha_vazia(Pilha *p) {
     return 0; //falso ela não está vazia
 }
 
+int pilha_cheia(Pilha *p) {
+    if (p->topo == MAX_PILHA - 1) {
+        return 1; //se for verdadeiro, ela tá cheia
+    }
+    return 0; // falso, não está cheia
+}
