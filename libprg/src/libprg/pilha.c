@@ -36,3 +36,10 @@ int desempilhar(Pilha *p, int *valor_removido) {
     return 1; //sucesso na operação
 }
 
+int consultar_topo(Pilha *p, int *valor_topo) {
+    if (pilha_vazia(p)) {
+        return 0; //não tem o que consultar
+    }
+    *valor_topo = p->dados[p->topo];
+    return 1; //sucesso
+}
