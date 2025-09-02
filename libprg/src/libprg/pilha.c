@@ -16,3 +16,12 @@ int pilha_cheia(Pilha *p) {
     }
     return 0; // falso, não está cheia
 }
+
+int empilhar(Pilha *p, int valor) {
+    if (pilha_cheia(p)) {
+        return 0; //overflow da pilha
+    }
+    p->topo++;
+    p->dados[p->topo] = valor;
+    return 1; //sucesso na operação
+}
