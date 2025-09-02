@@ -3,6 +3,7 @@
 void criar_pilha(Pilha *p) {
     p->topo = -1;
 }
+
 int pilha_vazia(Pilha *p) {
     if (p->topo == -1) {
         return 1; //se for verdadeiro, ela tá vazia
@@ -25,3 +26,13 @@ int empilhar(Pilha *p, int valor) {
     p->dados[p->topo] = valor;
     return 1; //sucesso na operação
 }
+
+int desempilhar(Pilha *p, int *valor_removido) {
+    if (pilha_vazia(p)) {
+        return 0; //underflow da pilha
+    }
+    *valor_removido = p->dados[p->topo];
+    p->topo--;
+    return 1; //sucesso na operação
+}
+
