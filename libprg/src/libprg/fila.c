@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "libprg/fila.h"
+#include "libprg/libprg.h"
 
 void criar_fila(Fila *f) {
     f->inicio = 0;
