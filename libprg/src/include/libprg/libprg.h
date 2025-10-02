@@ -43,4 +43,20 @@ int desenfileirar(Fila *f, int *valor_removido);
 int consultar_frente(Fila *f, int *valor_frente);
 int tamanho_fila(Fila *f);
 
+#define MAX_LISTA 100
+
+typedef struct {
+    int dados[MAX_LISTA];
+    int tamanho;
+} Lista;
+
+void criar_lista(Lista *l);
+int inserir_fim_lista(Lista *l, int valor);
+int remover_fim_lista(Lista *l, int *valor_removido);
+int obter_elemento_lista(Lista *l, int pos, int *valor);
+int lista_vazia(Lista *l);
+int lista_cheia(Lista *l);
+int tamanho_lista(Lista *l);
+void imprimir_lista(Lista *l);
+
 #endif
