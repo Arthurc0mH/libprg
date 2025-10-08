@@ -63,4 +63,25 @@ int busca_binaria_lista(Lista *l, int valor); // Requer que a lista esteja orden
 int remover_elemento_lista(Lista *l, int valor); // Usa busca linear para encontrar e remover
 void ordenar_lista(Lista *l); // Função auxiliar para a busca binária
 
+typedef struct No {
+    int valor;
+    struct No* proximo;
+} No;
+
+//Estrutura da Lista Encadeada.
+//Contém um ponteiro para o primeiro nó ('inicio') e o tamanho da lista.
+
+typedef struct {
+    No* inicio;
+    int tamanho;
+} ListaEncadeada;
+
+void criar_lista_encadeada(ListaEncadeada* l);
+void destruir_lista_encadeada(ListaEncadeada* l);
+void inserir_inicio_lista_encadeada(ListaEncadeada* l, int valor);
+int remover_inicio_lista_encadeada(ListaEncadeada* l, int* valor_removido);
+int tamanho_lista_encadeada(ListaEncadeada* l);
+int obter_primeiro_lista_encadeada(ListaEncadeada* l, int* valor);
+void imprimir_lista_encadeada(ListaEncadeada* l);
+
 #endif
