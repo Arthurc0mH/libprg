@@ -58,5 +58,9 @@ int lista_vazia(Lista *l);
 int lista_cheia(Lista *l);
 int tamanho_lista(Lista *l);
 void imprimir_lista(Lista *l);
+int busca_linear_lista(Lista *l, int valor);
+int busca_binaria_lista(Lista *l, int valor); // Requer que a lista esteja ordenada
+int remover_elemento_lista(Lista *l, int valor); // Usa busca linear para encontrar e remover
+void ordenar_lista(Lista *l); // Função auxiliar para a busca binária
 
 #endif
