@@ -47,7 +47,7 @@ int tamanho_fila(Fila *f) {
     return f->tamanho;
 }
 
-int enfileirar2(Fila *f, int valor)
+int enfileirar2(Fila *f, char valor)
 {
     if (fila_cheia(f)) {
         return 0;
@@ -58,7 +58,7 @@ int enfileirar2(Fila *f, int valor)
     return 1;
 }
 
-int desinfileirar2(Fila *f, int *valor_removido)
+int desinfileirar2(Fila *f, char *valor_removido)
 {
     if (fila_vazia(f)) {
         return 0;
