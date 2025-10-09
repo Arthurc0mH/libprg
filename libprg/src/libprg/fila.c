@@ -67,4 +67,4 @@ int desinfileirar2(Fila *f, int *valor_removido)
     f->inicio = (f->inicio + 1) % MAX_FILA;
     f->tamanho--;
     return 1;
-}
+}//a
