@@ -30,6 +30,7 @@ result_t compute(double a, double b, operation_t op);
 
 typedef struct {
     int dados[MAX_FILA];
+    int dados_char[MAX_FILA];
     int inicio;
     int fim;
     int tamanho;
