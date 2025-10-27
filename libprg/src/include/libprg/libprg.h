@@ -30,6 +30,7 @@ result_t compute(double a, double b, operation_t op);
 
 typedef struct {
     int dados[MAX_FILA];
+    int dados_char[MAX_FILA];
     int inicio;
     int fim;
     int tamanho;
@@ -42,6 +43,8 @@ int enfileirar(Fila *f, int valor);
 int desenfileirar(Fila *f, int *valor_removido);
 int consultar_frente(Fila *f, int *valor_frente);
 int tamanho_fila(Fila *f);
+int enfileirar2(Fila *f, char valor);
+int desinfileirar2(Fila *f, char *valor_removido);
 
 #define MAX_LISTA 100
 
