@@ -54,3 +54,10 @@ int valor_topo(Pilha *p) {
     }
     return p->dados[p->topo]; //retorna o valor do topo
 }
+
+char valor_topo_char(Pilha *p) { //para resolver a prova
+    if (pilha_vazia(p)) {
+        return 0; //pilha vazia
+    }
+    return p->dados[p->topo]; //retorna o valor do topo
+}
