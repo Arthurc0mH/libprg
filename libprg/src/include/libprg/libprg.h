@@ -21,6 +21,8 @@ int empilhar(Pilha *p, int valor); //retorna 1 se a deu certo, retorna 0 se der 
 int desempilhar(Pilha *p, int *valor_removido); //retorna 1 se deu certo, retorna 0 se der underflow
 int consultar_topo(Pilha *p, int *valor_topo); //retorna 1 der certo, 0 se vazia
 int tamanho_pilha(Pilha *p); //da return na quantidade de itens na pilha
+int valor_topo(Pilha *p); //retorna o valor do topo da pilha
+char valor_topo_char(Pilha *p); //retorna o valor do topo da pilha em char
 
 result_t sub(double a, double b);
 result_t sum(double a, double b);
