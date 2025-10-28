@@ -1,4 +1,5 @@
 #include "libprg/libprg.h"
+//"Pilha *p" como parâmetro é o ponteiro para a pilha a ser verificada
 
 void criar_pilha(Pilha *p) {
     p->topo = -1;
@@ -18,7 +19,7 @@ int pilha_cheia(Pilha *p) {
     return 0; // falso, não está cheia
 }
 
-int empilhar(Pilha *p, int valor) {
+int empilhar(Pilha *p, int valor) { //Pilha *p é a pilha que será empilhada. valor é o que vai ser empilhado
     if (pilha_cheia(p)) {
         return 0; //overflow da pilha
     }
@@ -27,7 +28,7 @@ int empilhar(Pilha *p, int valor) {
     return 1; //sucesso na operação
 }
 
-int desempilhar(Pilha *p, int *valor_removido) {
+int desempilhar(Pilha *p, int *valor_removido) { //caso não seja necessário, o valor_removido pode ser uma variável de "lixo"
     if (pilha_vazia(p)) {
         return 0; //underflow da pilha
     }
@@ -44,7 +45,7 @@ int consultar_topo(Pilha *p, int *valor_topo) {
     return 1; //sucesso
 }
 
-int tamanho_pilha(Pilha *p) {
+int tamanho_pilha(Pilha *p) { // a pilha começa em -1, então o tamanho é topo + 1
     return p->topo + 1;
 }
 

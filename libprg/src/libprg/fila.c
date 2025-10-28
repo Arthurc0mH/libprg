@@ -25,7 +25,7 @@ int enfileirar(Fila *f, int valor) {
     return 1;
 }
 
-int desenfileirar(Fila *f, int *valor_removido) {
+int desenfileirar(Fila *f, int *valor_removido) { //valor_removido pode ser uma variável de lixo
     if (fila_vazia(f)) {
         return 0;
     }
