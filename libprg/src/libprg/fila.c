@@ -68,3 +68,11 @@ int desinfileirar2(Fila *f, char *valor_removido)
     f->tamanho--;
     return 1;
 }
+
+int editar_frente(Fila *f, char valor) {
+    if (fila_vazia(f)) {
+        return 0;
+    }
+    f->dados_char[f->inicio] = valor;
+
+}
