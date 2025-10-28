@@ -48,6 +48,7 @@ int tamanho_fila(Fila *f);
 int enfileirar2(Fila *f, char valor);
 int desinfileirar2(Fila *f, char *valor_removido);
 int editar_frente(Fila *f, char valor);
+int consultar_final(Fila *f, int *valor_final);
 
 #define MAX_LISTA 100
 

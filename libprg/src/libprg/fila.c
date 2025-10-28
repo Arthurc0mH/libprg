@@ -76,3 +76,11 @@ int editar_frente(Fila *f, char valor) {
     f->dados_char[f->inicio] = valor;
 
 }
+
+int consultar_final(Fila *f, int *valor_final) {
+    if (fila_vazia(f)) {
+        return 0;
+    }
+    *valor_final = f->dados[f->fim];
+    return 1;
+}
