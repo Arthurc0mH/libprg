@@ -91,4 +91,10 @@ int tamanho_lista_encadeada(ListaEncadeada* l);
 int obter_primeiro_lista_encadeada(ListaEncadeada* l, int* valor);
 void imprimir_lista_encadeada(ListaEncadeada* l);
 
+//Estruturas de ordenação
+
+void bubble_sort(int vetor[], int tamanho);
+void insertion_sort(int vetor[], int tamanho);
+void selection_sort(int vetor[], int tamanho);
+
 #endif
