@@ -97,4 +97,10 @@ void bubble_sort(int vetor[], int tamanho);
 void insertion_sort(int vetor[], int tamanho);
 void selection_sort(int vetor[], int tamanho);
 
+void sort(int vetor[], int tamanho);
+void merge_sort(int vetor[], int inicio, int fim);
+void troca(int *a, int *b);
+int particiona(int vetor[], int inicio, int fim);
+void quick_sort(int vetor[], int inicio, int fim);
+
 #endif
