@@ -73,6 +73,8 @@ void ordenar_lista(Lista *l); // Função auxiliar para a busca binária
 typedef struct No {
     int valor;
     struct No* proximo;
+    struct No *esquerda;
+    struct No *direita;
 } No;
 
 //Estrutura da Lista Encadeada.
@@ -102,5 +104,6 @@ void merge_sort(int vetor[], int inicio, int fim);
 void troca(int *a, int *b);
 int particiona(int vetor[], int inicio, int fim);
 void quick_sort(int vetor[], int inicio, int fim);
+
 
 #endif
