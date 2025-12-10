@@ -98,12 +98,19 @@ void imprimir_lista_encadeada(ListaEncadeada* l);
 void bubble_sort(int vetor[], int tamanho);
 void insertion_sort(int vetor[], int tamanho);
 void selection_sort(int vetor[], int tamanho);
+void merge(int vetor[], int inicio, int meio, int fim);
 
-void sort(int vetor[], int tamanho);
 void merge_sort(int vetor[], int inicio, int fim);
 void troca(int *a, int *b);
 int particiona(int vetor[], int inicio, int fim);
 void quick_sort(int vetor[], int inicio, int fim);
 
+No *criar_no(int valor);
+No *inserir_valor(No *raiz, int valor);
+No *busca(No *raiz, int valor);
+No *remover_valor(No *raiz, int valor);
+int maior_valor(No *raiz);
+int menor_valor(No *raiz);
+int altura_arvore(No *raiz);
 
 #endif
