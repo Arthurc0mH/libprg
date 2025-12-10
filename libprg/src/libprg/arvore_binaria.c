@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-
 #include "libprg/libprg.h"
 
 No *criar_no(int valor){
@@ -59,4 +58,37 @@ No *remover_valor(No *raiz, int valor){
             return no_aux;
         }else if (raiz->direita == NULL){}
     }
+}
+
+int maior_valor(No *raiz){
+    if (raiz == NULL){
+        printf("a árvore está vazia\n");
+        return 1;
+    }
+    No *atual = raiz;
+    while (atual->direita != NULL){
+        atual = atual->direita;
+    }
+    return atual->valor;
+}
+
+int menor_valor(No *raiz){
+    if (raiz == NULL){
+        printf("a árvore está vazia\n");
+        return 1;
+    }
+    No *atual = raiz;
+    while (atual->esquerda != NULL){
+        atual = atual->esquerda;
+    }
+    return atual->valor;
+}
+
+int altura_arvore(No *raiz){
+    if (raiz == NULL){
+        return 1;
+    }
+    int altura_esquerda = altura_arvore(raiz->esquerda);
+    int altura_direita = altura_arvore(raiz->direita);
+    return (altura_esquerda > altura_direita ? altura_esquerda : altura_direita) + 1;
 }
