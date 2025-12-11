@@ -114,4 +114,24 @@ int maior_valor(No *raiz);
 int menor_valor(No *raiz);
 int altura_arvore(No *raiz);
 
+typedef struct no_avl
+{
+    int valor;
+    int altura;
+    struct no_avl *esquerda;
+    struct no_avl *direita;
+}no_avl_t;
+
+
+int altura(no_avl_t *v);
+int fator_balanceamento(no_avl_t *v);
+no_avl_t *rotacao_esquerda(no_avl_t *v);
+no_avl_t *rotacao_direita(no_avl_t *v);
+no_avl_t *rotacao_dupla_esquerda(no_avl_t *v);
+no_avl_t *rotacao_dupla_direita(no_avl_t *v);
+no_avl_t *balancear(no_avl_t *v);
+no_avl_t *inserir_no_avl(no_avl_t *v, int valor);
+no_avl_t *buscar_no_minimo_avl(no_avl_t *v);
+no_avl_t *remover_no_avl(no_avl_t *v, int valor);
+
 #endif

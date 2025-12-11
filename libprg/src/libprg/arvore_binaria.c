@@ -92,3 +92,135 @@ int altura_arvore(No *raiz){
     int altura_direita = altura_arvore(raiz->direita);
     return (altura_esquerda > altura_direita ? altura_esquerda : altura_direita) + 1;
 }
+
+// árvore avl
+
+#define max(a,b) (((a) > (b)) ? (a) : (b))
+
+no_avl_t *criar_no_avl(int valor){
+    no_avl_t *no = (no_avl_t *) malloc(sizeof(no_avl_t));
+    if (!no) return NULL;
+    no->valor = valor;
+    no->altura = 1;
+    no->esquerda = NULL;
+    no->direita = NULL;
+    return no;
+}
+
+int altura(no_avl_t *v){
+    if (v == NULL){
+        return 0;
+    }else{
+        return v->altura;
+    }
+}
+
+int fator_balanceamento(no_avl_t *v){
+    if (v == NULL){
+        return 0;
+    }else{
+        return altura(v->esquerda) - altura(v->direita);
+    }
+}
+
+no_avl_t *rotacao_esquerda(no_avl_t *v){
+    no_avl_t *u = v->direita;
+    v->direita = u->esquerda;
+    u->esquerda = v;
+    v->altura = max(altura(v->esquerda), altura(v->direita)) + 1;
+    u->altura = max(altura(u->esquerda), altura(u->direita)) + 1;
+    return u;
+}
+
+no_avl_t *rotacao_direita(no_avl_t *v){
+    no_avl_t *u = v->esquerda;
+    v->esquerda = u->direita;
+    u->direita = v;
+    v->altura = max(altura(v->esquerda), altura(v->direita)) + 1;
+    u->altura = max(altura(u->esquerda), altura(u->direita)) + 1;
+    return u;
+}
+
+no_avl_t *rotacao_dupla_esquerda(no_avl_t *v){ //rotação direita no filho, dps esquerda no pai
+    v->direita = rotacao_direita(v->direita);
+    return rotacao_esquerda(v);
+}
+
+no_avl_t *rotacao_dupla_direita(no_avl_t *v){ //rotção esquerda no filho, dps direita no pai
+    v->esquerda = rotacao_esquerda(v->esquerda);
+    return rotacao_direita(v);
+
+}
+
+no_avl_t *balancear(no_avl_t *v){
+    if (!v) return NULL;
+
+    v->altura = max(altura(v->esquerda), altura(v->direita)) + 1;
+
+    int fator = fator_balanceamento(v);
+
+    if (fator > 1){
+        if (fator_balanceamento(v->esquerda) >= 0){
+            return rotacao_direita(v);
+        }else{
+            return rotacao_dupla_direita(v);
+        }
+    }
+    if (fator < -1){
+        if (fator_balanceamento(v->direita) <= 0){
+            return rotacao_esquerda(v);
+        }else{
+            return rotacao_dupla_esquerda(v);
+        }
+    }
+    return v;
+}
+
+no_avl_t *inserir_no_avl(no_avl_t *v, int valor){
+    if (!v) return criar_no_avl(valor);
+
+    if (valor < v->valor){
+        v->esquerda = inserir_no_avl(v->esquerda, valor); //insere na subarvore esquerda
+    }else if (valor > v->valor){
+        v->direita = inserir_no_avl(v->direita, valor); //insere na subarvore direita
+    }else{
+        return v;
+    }
+    return balancear(v);
+}
+
+no_avl_t *buscar_no_minimo_avl(no_avl_t *v){
+    no_avl_t *atual = v;
+
+    while (atual->esquerda){
+        atual = atual->esquerda;
+    }
+    return atual;
+}
+
+no_avl_t *remover_no_avl(no_avl_t *v, int valor){
+    if (!v) return NULL;
+    if (valor < v->valor){
+        v->esquerda = remover_no_avl(v->esquerda, valor);
+    }else if (valor > v->valor){
+        v->direita = remover_no_avl(v->direita, valor);
+    }else{
+        if (!v->esquerda || !v->direita){
+            no_avl_t *aux = v->esquerda ? v->esquerda : v->direita;
+            if (!aux){
+                free(v);
+                return NULL;
+            }
+            v->valor = aux->valor;
+            v->direita = aux->direita;
+            v->esquerda = aux->esquerda;
+            free(aux);
+        }else{
+            no_avl_t *aux = buscar_no_minimo_avl(v->direita);
+            v->valor = aux->valor;
+            v->direita = remover_no_avl(v->direita, aux->valor);
+        }
+    }
+    return balancear(v);
+}
+
