@@ -224,3 +224,44 @@ no_avl_t *remover_no_avl(no_avl_t *v, int valor){
     return balancear(v);
 }
 
+void pre_ordem(no_avl_t *v){
+    if (v){
+        printf("%d ", v->valor);
+        pre_ordem(v->esquerda);
+        pre_ordem(v->direita);
+    }
+}
+
+void em_ordem(no_avl_t *v){
+    if (v){
+        em_ordem(v->esquerda);
+        printf("%d ", v->valor);
+        em_ordem(v->direita);
+    }
+}
+
+void pos_ordem(no_avl_t *v){
+    if (v){
+        pos_ordem(v->esquerda);
+        pos_ordem(v->direita);
+        printf("%d ", v->valor);
+    }
+}
+
+void em_largura(no_avl_t *v){
+    if (!v) return;
+
+    int capacidade = 100;
+    no_avl_t **fila = (no_avl_t **) malloc(capacidade * sizeof(no_avl_t *));
+    int inicio = 0, fim = 0;
+
+    fila[fim++] = v;
+
+    while (inicio < fim){
+        no_avl_t *atual = fila[inicio++];
+        printf("%d ", atual->valor);
+        if (atual->esquerda) fila[fim++] = atual->esquerda;
+        if (atual->direita) fila[fim++] = atual->direita;
+    }
+    free(fila);
+}
