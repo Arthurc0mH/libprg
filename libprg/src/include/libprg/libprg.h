@@ -106,6 +106,7 @@ int particiona(int vetor[], int inicio, int fim);
 void quick_sort(int vetor[], int inicio, int fim);
 
 No *criar_no(int valor);
+void destruir_no(No *no);
 No *inserir_valor(No *raiz, int valor);
 No *busca(No *raiz, int valor);
 No *remover_valor(No *raiz, int valor);
