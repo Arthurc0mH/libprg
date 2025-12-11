@@ -29,7 +29,7 @@ No *inserir_valor(No *raiz, int valor){
     return raiz;
 }
 
-int busca(No *raiz, int valor){ //vou usar int mesmo, 0 e 1 pra false e true
+No *busca(No *raiz, int valor){ //vou usar int mesmo, 0 e 1 pra false e true
     if (raiz == NULL){
         return 0;
     }
