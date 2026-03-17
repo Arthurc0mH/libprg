@@ -6,9 +6,7 @@ set(HEADERS
 )
 # Add source files here manually
 set(SOURCES 
-       "${CMAKE_CURRENT_LIST_DIR}/src/libprg/sum.c"
-       "${CMAKE_CURRENT_LIST_DIR}/src/libprg/sub.c"
-       "${CMAKE_CURRENT_LIST_DIR}/src/libprg/libprg.c"
+       "${CMAKE_CURRENT_LIST_DIR}/src/libprg/pilha2.c"
 )
 
 add_library(libprg
@@ -16,12 +14,13 @@ add_library(libprg
         src/libprg/sub.c
         src/libprg/libprg.c
         src/libprg/fila.c
-        src/libprg/pilha.c
+        #src/libprg/pilha.c
         src/libprg/lista_linear.c
         src/libprg/lista_encadeada.c
         src/libprg/alg_ord_troca.c
         src/libprg/alg_ord_div.c
         src/libprg/arvore_binaria.c
+        src/libprg/pilha2.c
 )
 target_sources(libprg PUBLIC ${SOURCES})
 target_include_directories(libprg PUBLIC ${CMAKE_CURRENT_LIST_DIR}/src/include)
