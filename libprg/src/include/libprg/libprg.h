@@ -2,6 +2,8 @@
 #define LIBPRG_LIBPRG_H
 #define MAX_PILHA 100
 
+#include <stdbool.h>
+
 typedef struct {
     double value;
     int error;
@@ -9,6 +11,7 @@ typedef struct {
 
 typedef enum { SUM, SUB } operation_t;
 
+//pilha do semestre passado
 // typedef struct {
 //     int dados[MAX_PILHA];
 //     int topo;
@@ -28,9 +31,15 @@ typedef enum { SUM, SUB } operation_t;
 // result_t sum(double a, double b);
 // result_t compute(double a, double b, operation_t op);
 
-
+//pilha desse semestre
 typedef struct pilha pilha_t;
 pilha_t* criar_pilha(int capacidade);
+int empilhar(pilha_t* pilha, int valor);
+int desempilhar(pilha_t* pilha);
+int tamanho(pilha_t* pilha);
+bool vazia(pilha_t* pilha);
+int destruir_pilha(pilha_t* pilha);
+
 
 #define MAX_FILA 100
 

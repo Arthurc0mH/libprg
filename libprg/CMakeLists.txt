@@ -10,9 +10,6 @@ set(SOURCES
 )
 
 add_library(libprg
-        src/libprg/sum.c
-        src/libprg/sub.c
-        src/libprg/libprg.c
         src/libprg/fila.c
         #src/libprg/pilha.c
         src/libprg/lista_linear.c
@@ -21,6 +18,7 @@ add_library(libprg
         src/libprg/alg_ord_div.c
         src/libprg/arvore_binaria.c
         src/libprg/pilha2.c
+        src/libprg/pilha.c
 )
 target_sources(libprg PUBLIC ${SOURCES})
 target_include_directories(libprg PUBLIC ${CMAKE_CURRENT_LIST_DIR}/src/include)
