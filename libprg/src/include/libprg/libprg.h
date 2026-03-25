@@ -4,13 +4,6 @@
 
 #include <stdbool.h>
 
-typedef struct {
-    double value;
-    int error;
-} result_t;
-
-typedef enum { SUM, SUB } operation_t;
-
 //pilha do semestre passado
 // typedef struct {
 //     int dados[MAX_PILHA];
