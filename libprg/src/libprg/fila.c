@@ -1,4 +1,5 @@
-#include <stdio.h>
+/*
+ #include <stdio.h>
 #include "libprg/libprg.h"
 
 void criar_fila(Fila *f) {
@@ -84,3 +85,4 @@ int consultar_final(Fila *f, int *valor_final) {
     *valor_final = f->dados[f->fim];
     return 1;
 }
+*/

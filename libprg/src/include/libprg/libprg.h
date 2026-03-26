@@ -4,27 +4,29 @@
 
 #include <stdbool.h>
 
-//pilha do semestre passado
-// typedef struct {
-//     int dados[MAX_PILHA];
-//     int topo;
-// } Pilha;
-//
-// void criar_pilha(Pilha *p);
-// int pilha_vazia(Pilha *p); //retorna 1 se a pilha tiver vazia
-// int pilha_cheia(Pilha *p); //retorna 1 se a pilha tiver cheia
-// int empilhar(Pilha *p, int valor); //retorna 1 se a deu certo, retorna 0 se der overflow
-// int desempilhar(Pilha *p, int *valor_removido); //retorna 1 se deu certo, retorna 0 se der underflow
-// int consultar_topo(Pilha *p, int *valor_topo); //retorna 1 der certo, 0 se vazia
-// int tamanho_pilha(Pilha *p); //da return na quantidade de itens na pilha
-// int valor_topo(Pilha *p); //retorna o valor do topo da pilha
-// char valor_topo_char(Pilha *p); //retorna o valor do topo da pilha em char
-//
-// result_t sub(double a, double b);
-// result_t sum(double a, double b);
-// result_t compute(double a, double b, operation_t op);
 
-//pilha desse semestre
+/*pilha do semestre passado
+ typedef struct {
+     int dados[MAX_PILHA];
+     int topo;
+ } Pilha;
+
+ void criar_pilha(Pilha *p);
+ int pilha_vazia(Pilha *p); //retorna 1 se a pilha tiver vazia
+ int pilha_cheia(Pilha *p); //retorna 1 se a pilha tiver cheia
+ int empilhar(Pilha *p, int valor); //retorna 1 se a deu certo, retorna 0 se der overflow
+ int desempilhar(Pilha *p, int *valor_removido); //retorna 1 se deu certo, retorna 0 se der underflow
+ int consultar_topo(Pilha *p, int *valor_topo); //retorna 1 der certo, 0 se vazia
+ int tamanho_pilha(Pilha *p); //da return na quantidade de itens na pilha
+ int valor_topo(Pilha *p); //retorna o valor do topo da pilha
+ char valor_topo_char(Pilha *p); //retorna o valor do topo da pilha em char
+
+ result_t sub(double a, double b);
+ result_t sum(double a, double b);
+ result_t compute(double a, double b, operation_t op);
+*/
+
+//=== PILHA ===
 typedef struct pilha {
     int *elementos;
     int topo;
@@ -39,6 +41,7 @@ bool vazia(pilha_t* pilha);
 int destruir_pilha(pilha_t* pilha);
 
 
+/*fila semestre passado
 #define MAX_FILA 100
 
 typedef struct {
@@ -60,6 +63,23 @@ int enfileirar2(Fila *f, char valor);
 int desinfileirar2(Fila *f, char *valor_removido);
 int editar_frente(Fila *f, char valor);
 int consultar_final(Fila *f, int *valor_final);
+
+*/
+// === FILA ====
+typedef struct fila {
+    int* elementos;
+    int capacidade;
+    int inicio;
+    int fim;
+    int tamanho;
+}fila_t;
+
+fila_t* criar_fila(int capacidade);
+void enfileirar(fila_t* fila, int valor);
+
+
+
+
 
 #define MAX_LISTA 100
 
