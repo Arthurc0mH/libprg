@@ -14,15 +14,17 @@ fila_t* criar_fila(int capacidade) {
 }
 
 void enfileirar(fila_t* fila, int valor) {
-
+    if (fila->tamanho >= fila->capacidade) {
+     exit(EXIT_FAILURE);
+    }
     fila->elementos[fila->fim] = valor;
     fila->fim = (fila->fim + 1) % fila->capacidade;
     fila->tamanho++;
 }
 
-int desenfileirar() {
-
-}
+// int desenfileirar() {
+//
+// }
 
 // int incio() {
 //
