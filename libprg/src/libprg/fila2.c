@@ -1,8 +1,8 @@
 #include <stdlib.h>
-
+#include <stdbool.h>
 #include "libprg/libprg.h"
 
-fila_t* criar_fila(int capacidade) {
+fila_t* criar_fila(int capacidade){
     fila_t* fila = malloc(sizeof(fila_t));
     fila->elementos = malloc(sizeof(int) * capacidade);
     fila->inicio = 0;
@@ -12,38 +12,48 @@ fila_t* criar_fila(int capacidade) {
 
     return fila;
 }
-
-void enfileirar(fila_t* fila, int valor) {
-    if (fila->tamanho >= fila->capacidade) {
-     exit(EXIT_FAILURE);
+void enfileirar(fila_t* fila, int valor){
+    if (fila->tamanho >= fila->capacidade){
+        exit(EXIT_FAILURE);
     }
     fila->elementos[fila->fim] = valor;
     fila->fim = (fila->fim + 1) % fila->capacidade;
     fila->tamanho++;
 }
 
-// int desenfileirar() {
-//
-// }
+void desenfileirar(fila_t* fila){
+    if (fila->tamanho <= 0){
+        exit(EXIT_FAILURE);
+        }
+    fila->inicio = (fila->inicio + 1) % fila->capacidade;
+    fila->tamanho--;
+}
 
-// int incio() {
-//
-// }
-//
-// int fim() {
-//
-// }
-//
-// int vazia() {
-//
-// }
-//
-// int cheia() {
-//
-// }
+int inicio(fila_t* fila){
+    return fila->elementos[fila->inicio];
+}
 
-int destruir_fila(fila_t* fila) {
-    free (fila->elementos);
+int fim(fila_t* fila){
+    return fila->elementos[fila->fim];
+}
+
+bool fila_vazia(fila_t* fila){
+    if (fila->tamanho == 0){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+bool fila_cheia(fila_t* fila){
+    if (fila->tamanho == fila->capacidade){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+void destruir_fila(fila_t* fila){
+    free(fila->elementos);
     free(fila);
-    return 0;
 }
