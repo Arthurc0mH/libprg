@@ -30,11 +30,15 @@ void desenfileirar(fila_t* fila){
 }
 
 int inicio(fila_t* fila){
+    if (fila_vazia(fila)) exit(EXIT_FAILURE);
     return fila->elementos[fila->inicio];
 }
 
 int fim(fila_t* fila){
-    return fila->elementos[fila->fim];
+    if (fila_vazia(fila)) exit(EXIT_FAILURE);
+    int final = fila->fim - 1;
+    if (final < 0) final = fila->capacidade - 1;
+    return fila->elementos[final];
 }
 
 bool fila_vazia(fila_t* fila){
