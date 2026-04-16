@@ -80,25 +80,28 @@ bool fila_vazia(fila_t* fila);
 bool fila_cheia(fila_t* fila);
 void destruir_fila(fila_t* fila);
 
-#define MAX_LISTA 100
+// #define MAX_LISTA 100
+//
+// typedef struct {
+//     int dados[MAX_LISTA];
+//     int tamanho;
+// } Lista;
+//
+// void criar_lista(Lista *l);
+// int inserir_fim_lista(Lista *l, int valor);
+// int remover_fim_lista(Lista *l, int *valor_removido);
+// int obter_elemento_lista(Lista *l, int pos, int *valor);
+// int lista_vazia(Lista *l);
+// int lista_cheia(Lista *l);
+// int tamanho_lista(Lista *l);
+// void imprimir_lista(Lista *l);
+// int busca_linear_lista(Lista *l, int valor);
+// int busca_binaria_lista(Lista *l, int valor); // Requer que a lista esteja ordenada
+// int remover_elemento_lista(Lista *l, int valor); // Usa busca linear para encontrar e remover
+// void ordenar_lista(Lista *l); // Função auxiliar para a busca binária
 
-typedef struct {
-    int dados[MAX_LISTA];
-    int tamanho;
-} Lista;
-
-void criar_lista(Lista *l);
-int inserir_fim_lista(Lista *l, int valor);
-int remover_fim_lista(Lista *l, int *valor_removido);
-int obter_elemento_lista(Lista *l, int pos, int *valor);
-int lista_vazia(Lista *l);
-int lista_cheia(Lista *l);
-int tamanho_lista(Lista *l);
-void imprimir_lista(Lista *l);
-int busca_linear_lista(Lista *l, int valor);
-int busca_binaria_lista(Lista *l, int valor); // Requer que a lista esteja ordenada
-int remover_elemento_lista(Lista *l, int valor); // Usa busca linear para encontrar e remover
-void ordenar_lista(Lista *l); // Função auxiliar para a busca binária
+typedef struct lista_linear;
+lista_linear_t* criar_lista(bool ordenada);
 
 typedef struct No {
     int valor;
