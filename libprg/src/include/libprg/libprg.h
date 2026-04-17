@@ -100,7 +100,13 @@ void destruir_fila(fila_t* fila);
 // int remover_elemento_lista(Lista *l, int valor); // Usa busca linear para encontrar e remover
 // void ordenar_lista(Lista *l); // Função auxiliar para a busca binária
 
-typedef struct lista_linear;
+typedef struct lista_linear{
+    int* elementos;
+    int tamanho;
+    int capacidade;
+    bool ordenada;
+}lista_linear_t;
+
 lista_linear_t* criar_lista(bool ordenada);
 
 typedef struct No {
