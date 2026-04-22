@@ -4,6 +4,45 @@
 
 #include <stdbool.h>
 
+/*
+ *(VOU APAGAR ISSO ANTES DA PROVA, APENAS UM RESUMO PARA EU ESTUDAR)
+ *_____________________________________________________________________________________-
+ *|texto | binário | descrição                             | existir     | não existir |
+ *|------------------------------------------------------------------------------------|
+ *|r     | rb      |abre p/ leitura                        | abre        | erro        |
+ *|w     | wb      |abre p/ escrita no começo              |sobreescreve | cria        |
+ *|a     | ab      |abre p/ escrita no fim                 |abre         | cria        |
+ *|r+    | rb+     |abre p/ leitura e escrita              |abre         | cria        |
+ *|w+    | wb+     |cria um arquivo p leitura e escrita    |sobreescreve | cria        |
+ *|a+    | ab+     |abre p escrita no fim do file e leitura|abre         | cria        |
+ *--------------------------------------------------------------------------------------
+ *
+ *--funções para escrita--
+ *
+ *int fputc(int, FILE *) escreve um caractere no arquivo
+ *int fputs(char*, FILE*) escreve uma string no arquivo
+ *int fprintf(FILE *, char *, ...) Semelhante ao printf
+ *int fwrite(void *, int, int, FILE *) Escreve bytes em arquivo binário
+ *
+ *--funções para leitura--
+ *
+ *int fgetc(FILE *) lê um caractere do arquivo
+ *int fgets(char *, int, FILE*) lê string de tamanho fixo
+ *int fscanf(FILE *, char *, ...) Semelhante ao scanf
+ *int fread(void *, size_t, size_t, FILE *) Lê uma quantidade específica de bytes de arquivo binário
+ *
+ *--outras funções para trabalhar com arquivos--
+ *FILE *fopen(char *, char *) Abre um arquivo
+ *int fclose(FILE *) Fecha um arquivo
+ *int fseek(FILE *, long, int) Posiciona o arquivo em um byte específico
+ *long ftell(FILE *) Retorna a posição atual do cursor no arquivo
+ *int feof(FILE *) Retorna verdadeiro se o fim do arquivo for atingido
+ *int ferror(FILE *) Retorna verdadeiro se ocorreu algum erro
+ *int remove(char *) Exclui um arquivo
+ *int fflush(FILE *) Descarrega dados do buffer no arquivo
+ *
+*/
+
 // typedef struct {
 //     int dados[MAX_PILHA];
 //     int topo;
