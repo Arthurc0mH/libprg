@@ -62,17 +62,23 @@ typedef struct No {
 //=== LISTA ENCADEADA ===
 
 typedef struct no no_t;
-typedef struct nod nod_t;
+typedef struct lista_encadeada lista_encadeada_t;
 
 no_t* criar_encadeada(int dado);
-void inserir_encadeada(no_t** inicio, int dado);
-no_t* buscar(no_t** inicio, int dado);
-bool remover_encadeada(no_t** inicio, int dado);
-void destruir_encadeada(no_t** inicio);
+void inserir_encadeada(lista_encadeada_t* lista, int dado);
+no_t* buscar(lista_encadeada_t* lista, int dado)
+bool remover_encadeada(lista_encadeada_t* lista, int dado);
+void destruir_encadeada(lista_encadeada_t* inicio)
+lista_encadeada_t* criar_lista_encadeada(bool ordenada);
 
-//Estrutura da Lista Encadeada.
-//Contém um ponteiro para o primeiro nó ('inicio') e o tamanho da lista.
+//=== LISTA ENCADEADA DUPLA ===
+typedef struct nod nod_t;
 
+nod_t* criar_lista_cadeada_dupla(int dado);
+void inserir_encadeada_dupla(nod_t** inicio, int dado);
+nod_t* buscar_encadeada_dupla(nod_t** inicio, int dado);
+void destruir_encadeada_dupla(nod_t** inicio);
+bool remover_encadeada_dupla(nod_t** inicio, int dado);
 
 //Estruturas de ordenação
 
