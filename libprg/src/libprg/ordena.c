@@ -31,20 +31,20 @@ int* merge(int* vetor, int esquerda, int meio, int direita) {
     while (i <= meio && j <= direita) {
         if (vetor[i] <= vetor[j]) {
             aux[k] = vetor[i];
-            i = i + 1;
+            i++;
         }else {
             aux[k] = vetor[j];
-            j = j + 1;
+            j++;
         }
-        k = k + 1;
+        k++;
     }
     while (i <= meio) {
         aux[k] = vetor[i];
-        i = i + 1; k = k + 1;
+        i++; k = k++;
     }
     while (j <= direita) {
         aux[k] = vetor[j];
-        j = j + 1; k = k + 1;
+        j++; k++;
     }
     for (i = esquerda; i <= direita; i++) {
         vetor[i] = aux[i - esquerda];
