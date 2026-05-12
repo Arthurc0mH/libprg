@@ -49,4 +49,5 @@ int* merge(int* vetor, int esquerda, int meio, int direita) {
     for (i = esquerda; i <= direita; i++) {
         vetor[i] = aux[i - esquerda];
     }
+    return vetor;
 }

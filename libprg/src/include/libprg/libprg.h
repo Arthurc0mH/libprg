@@ -66,9 +66,9 @@ typedef struct lista_encadeada lista_encadeada_t;
 
 no_t* criar_encadeada(int dado);
 void inserir_encadeada(lista_encadeada_t* lista, int dado);
-no_t* buscar(lista_encadeada_t* lista, int dado)
+no_t* buscar(lista_encadeada_t* lista, int dado);
 bool remover_encadeada(lista_encadeada_t* lista, int dado);
-void destruir_encadeada(lista_encadeada_t* inicio)
+void destruir_encadeada(lista_encadeada_t* inicio);
 lista_encadeada_t* criar_lista_encadeada(bool ordenada);
 
 //=== LISTA ENCADEADA DUPLA ===
@@ -79,6 +79,11 @@ void inserir_encadeada_dupla(nod_t** inicio, int dado);
 nod_t* buscar_encadeada_dupla(nod_t** inicio, int dado);
 void destruir_encadeada_dupla(nod_t** inicio);
 bool remover_encadeada_dupla(nod_t** inicio, int dado);
+
+//=== ORDENAÇÃO ===
+
+int* bubble_sort(int* vetor, int tamanho);
+int* merge_sort(int* vetor, int esquerda, int direita);
 
 //Estruturas de ordenação
 
@@ -121,4 +126,4 @@ bool remover_encadeada_dupla(nod_t** inicio, int dado);
 // no_avl_t *buscar_no_minimo_avl(no_avl_t *v);
 // no_avl_t *remover_no_avl(no_avl_t *v, int valor);
 //
-// #endif
+#endif
