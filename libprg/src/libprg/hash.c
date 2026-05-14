@@ -44,7 +44,7 @@ int inserir_hash(dicionario_t* d, char* chave, int valor) {
     }
 
     no->valor = valor;
-    //TODO tratar colisões
+    //pra fazer tratar colisões
 
     no->proximo = NULL;
 
