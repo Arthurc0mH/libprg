@@ -85,6 +85,12 @@ bool remover_encadeada_dupla(nod_t** inicio, int dado);
 int* bubble_sort(int* vetor, int tamanho);
 int* merge_sort(int* vetor, int esquerda, int direita);
 
+// === Hash ===
+
+typedef struct noh noh_t;
+typedef struct dicionario dicionario_t;
+dicionario_t* criar_dicionario(int m);
+
 //Estruturas de ordenação
 
 // void bubble_sort(int vetor[], int tamanho);
