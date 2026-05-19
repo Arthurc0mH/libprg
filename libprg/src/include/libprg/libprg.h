@@ -91,45 +91,11 @@ typedef struct noh noh_t;
 typedef struct dicionario dicionario_t;
 dicionario_t* criar_dicionario(int m);
 
-//Estruturas de ordenação
+// === Árvore binária ===
 
-// void bubble_sort(int vetor[], int tamanho);
-// void insertion_sort(int vetor[], int tamanho);
-// void selection_sort(int vetor[], int tamanho);
-// void merge(int vetor[], int inicio, int meio, int fim);
-//
-// void merge_sort(int vetor[], int inicio, int fim);
-// void troca(int *a, int *b);
-// int particiona(int vetor[], int inicio, int fim);
-// void quick_sort(int vetor[], int inicio, int fim);
-//
-// No *criar_no(int valor);
-// void destruir_no(No *no);
-// No *inserir_valor(No *raiz, int valor);
-// No *busca(No *raiz, int valor);
-// No *remover_valor(No *raiz, int valor);
-// int maior_valor(No *raiz);
-// int menor_valor(No *raiz);
-// int altura_arvore(No *raiz);
+typedef struct noa noa_t;
+noa_t* criar_noa(int dado);
+noa_t* adicionar_noa(int dado, noa_t* no);
+void remover_noa(int dado, noa_t* no);
 
-// typedef struct no_avl
-// {
-//     int valor;
-//     int altura;
-//     struct no_avl *esquerda;
-//     struct no_avl *direita;
-// }no_avl_t;
-//
-//
-// int altura(no_avl_t *v);
-// int fator_balanceamento(no_avl_t *v);
-// no_avl_t *rotacao_esquerda(no_avl_t *v);
-// no_avl_t *rotacao_direita(no_avl_t *v);
-// no_avl_t *rotacao_dupla_esquerda(no_avl_t *v);
-// no_avl_t *rotacao_dupla_direita(no_avl_t *v);
-// no_avl_t *balancear(no_avl_t *v);
-// no_avl_t *inserir_no_avl(no_avl_t *v, int valor);
-// no_avl_t *buscar_no_minimo_avl(no_avl_t *v);
-// no_avl_t *remover_no_avl(no_avl_t *v, int valor);
-//
 #endif

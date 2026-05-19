@@ -1,0 +1,49 @@
+#include <stdlib.h>
+#include "libprg/libprg.h"
+
+typedef struct noa {
+    int dado;
+    noa_t* esquerda;
+    noa_t* direita;
+}noa_t;
+
+noa_t* criar_noa(int dado) {
+    noa_t* no = malloc(sizeof(noa_t));
+    no->dado = dado;
+    no->esquerda = NULL;
+    no->direita = NULL;
+    return no;
+}
+
+noa_t* adicionar_noa(int dado, noa_t* no) {
+    if (dado < no->dado || dado == no->dado) {
+        if (no->esquerda == NULL) {
+            no->esquerda = criar_noa(dado);
+        }else {
+            adicionar_noa(dado, no->esquerda);
+        }
+    }else if (dado > no->dado) {
+        if (no->direita == NULL) {
+            no->direita = criar_noa(dado);
+        }else {
+            adicionar_noa(dado, no->direita);
+        }
+    }
+}
+
+//noa_t* adicionar_noa(noa_t* raiz, int dado){
+//  if(raiz == NULL){
+//      return criar_noa(dado);
+//  }
+//  if(raiz->dado < dado){
+//      raiz->direita = adicionar_noa(raiz-> direita, dado);
+//  }
+//  if(raiz->dado > dado){
+//      raiz->esquerda = adicionar_noa(raiz->esquerda, dado);
+//  }
+//  return raiz;
+// }
+
+void remover_noa(int dado, noa_t* no) {
+
+}

@@ -15,6 +15,7 @@ no_t* criar_encadeada(int dado) {
     no_t* no = malloc(sizeof(no_t));
     no->dado = dado;
     no->proximo = NULL;
+    return no;
 }
 
 lista_encadeada_t* criar_lista_encadeada(bool ordenada) {
