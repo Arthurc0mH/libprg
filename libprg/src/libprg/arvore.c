@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include "libprg/libprg.h"
 
@@ -15,35 +16,48 @@ noa_t* criar_noa(int dado) {
     return no;
 }
 
-noa_t* adicionar_noa(int dado, noa_t* no) {
-    if (dado < no->dado || dado == no->dado) {
-        if (no->esquerda == NULL) {
-            no->esquerda = criar_noa(dado);
-        }else {
-            adicionar_noa(dado, no->esquerda);
-        }
-    }else if (dado > no->dado) {
-        if (no->direita == NULL) {
-            no->direita = criar_noa(dado);
-        }else {
-            adicionar_noa(dado, no->direita);
-        }
-    }
-}
+// noa_t* adicionar_noa(int dado, noa_t* no) {
+//     if (dado < no->dado || dado == no->dado) {
+//         if (no->esquerda == NULL) {
+//             no->esquerda = criar_noa(dado);
+//         }else {
+//             adicionar_noa(dado, no->esquerda);
+//         }
+//     }else if (dado > no->dado) {
+//         if (no->direita == NULL) {
+//             no->direita = criar_noa(dado);
+//         }else {
+//             adicionar_noa(dado, no->direita);
+//         }
+//     }
+//}
 
-//noa_t* adicionar_noa(noa_t* raiz, int dado){
-//  if(raiz == NULL){
-//      return criar_noa(dado);
-//  }
-//  if(raiz->dado < dado){
-//      raiz->direita = adicionar_noa(raiz-> direita, dado);
-//  }
-//  if(raiz->dado > dado){
-//      raiz->esquerda = adicionar_noa(raiz->esquerda, dado);
-//  }
-//  return raiz;
-// }
+noa_t* adicionar_noa(noa_t* raiz, int dado){
+  if(raiz == NULL){
+      return criar_noa(dado);
+  }
+  if(raiz->dado < dado){
+      raiz->direita = adicionar_noa(raiz-> direita, dado);
+  }
+  if(raiz->dado > dado){
+      raiz->esquerda = adicionar_noa(raiz->esquerda, dado);
+  }
+  return raiz;
+ }
 
 void remover_noa(int dado, noa_t* no) {
 
 }
+
+void travessia_emordem(noa_t* raiz) {
+    if (raiz != NULL) {
+        travessia_emordem(raiz->esquerda);
+        printf("%d ", raiz->dado);
+        travessia_emordem(raiz->direita);
+    }
+}
+
+//destruir
+//travessia_preordem
+//travessia_emordem
+//travessia_posordem
