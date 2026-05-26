@@ -51,14 +51,6 @@ void inserir_lista(lista_linear_t* lista, int valor);
 int busca_linear(lista_linear_t* lista, int valor);
 int busca_binaria(lista_linear_t* lista, int valor);
 
-
-typedef struct No {
-    int valor;
-    struct No* proximo;
-    struct No *esquerda;
-    struct No *direita;
-} No;
-
 //=== LISTA ENCADEADA ===
 
 typedef struct no no_t;
@@ -98,5 +90,17 @@ noa_t* criar_noa(int dado);
 noa_t* adicionar_noa(noa_t* raiz, int dado);
 void remover_noa(int dado, noa_t* no);
 void travessia_emordem(noa_t* raiz);
+
+// == Árvore AVL ==
+typedef struct noavl noavl_t;
+noavl_t* criar_noavl(int dado);
+int altura_avl(noavl_t* raiz);
+int fator_balanceamento(noavl_t* raiz);
+noavl_t* adicionar_noavl(noavl_t* raiz, int dado);
+noavl_t* rotacao_esquerda(noavl_t* v);
+noavl_t* rotacao_direita(noavl_t* v);
+noavl_t* rotacao_dupla_direita(noavl_t* v);
+noavl_t* rotacao_dupla_esquerda(noavl_t* v);
+noavl_t* balancear(noavl_t* v) ;
 
 #endif

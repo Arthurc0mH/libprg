@@ -16,22 +16,6 @@ noa_t* criar_noa(int dado) {
     return no;
 }
 
-// noa_t* adicionar_noa(int dado, noa_t* no) {
-//     if (dado < no->dado || dado == no->dado) {
-//         if (no->esquerda == NULL) {
-//             no->esquerda = criar_noa(dado);
-//         }else {
-//             adicionar_noa(dado, no->esquerda);
-//         }
-//     }else if (dado > no->dado) {
-//         if (no->direita == NULL) {
-//             no->direita = criar_noa(dado);
-//         }else {
-//             adicionar_noa(dado, no->direita);
-//         }
-//     }
-//}
-
 noa_t* adicionar_noa(noa_t* raiz, int dado){
   if(raiz == NULL){
       return criar_noa(dado);

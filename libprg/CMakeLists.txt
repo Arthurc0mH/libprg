@@ -26,6 +26,7 @@ add_library(libprg
         src/libprg/ordena.c
         src/libprg/hash.c
         src/libprg/arvore.c
+        src/libprg/avl.c
 )
 target_sources(libprg PUBLIC ${SOURCES})
 target_include_directories(libprg PUBLIC ${CMAKE_CURRENT_LIST_DIR}/src/include)
