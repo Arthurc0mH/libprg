@@ -88,7 +88,7 @@ dicionario_t* criar_dicionario(int m);
 typedef struct noa noa_t;
 noa_t* criar_noa(int dado);
 noa_t* adicionar_noa(noa_t* raiz, int dado);
-void remover_noa(int dado, noa_t* no);
+noa_t* remover_noa(int dado, noa_t* no);
 void travessia_emordem(noa_t* raiz);
 
 // == Árvore AVL ==
@@ -102,5 +102,6 @@ noavl_t* rotacao_direita(noavl_t* v);
 noavl_t* rotacao_dupla_direita(noavl_t* v);
 noavl_t* rotacao_dupla_esquerda(noavl_t* v);
 noavl_t* balancear(noavl_t* v) ;
+noavl_t* remover_noavl(int dado, noavl_t* raiz);
 
 #endif

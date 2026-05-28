@@ -97,3 +97,35 @@ noavl_t* balancear(noavl_t* v) {
     }
     return v;
 }
+
+noavl_t* remover_noavl(int dado, noavl_t* raiz) {
+    if (raiz == NULL) return NULL;
+
+    if (dado < raiz->dado) {
+        raiz->esquerda = remover_noavl(dado, raiz->esquerda);
+    }else if (dado > raiz->dado) {
+        raiz->direita = remover_noavl(dado, raiz->direita);
+    }else {
+        if (raiz->direita == NULL || raiz->esquerda == NULL) { //1 ou 0 filhos
+            noavl_t* temp = raiz->esquerda ? raiz->esquerda : raiz->direita;
+            if (temp == NULL) { //0 filhos
+                free(raiz);
+                return NULL;
+            }
+            free(raiz); //1 filho
+            return temp;
+        } //2 filhos
+        //encontra o menor valor da subárvore da direita
+        noavl_t* temp = raiz->direita;
+        while (temp != NULL && temp->esquerda != NULL) {
+            temp = temp->esquerda;
+        }
+        raiz->dado = temp->dado;
+        raiz->direita = remover_noavl(temp->dado, raiz->direita);
+    }
+    if (raiz != NULL) {
+        raiz->altura = 1 + max(altura_avl(raiz->esquerda), altura_avl(raiz->direita));
+        raiz = balancear(raiz);
+    }
+    return raiz;
+}
