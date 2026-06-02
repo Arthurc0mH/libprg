@@ -65,6 +65,21 @@ void travessia_emordem(noa_t* raiz) {
     }
 }
 
+void travessia_preordem(noa_t* raiz) {
+    if (raiz != NULL) {
+        printf("%d ", raiz->dado);
+        travessia_preordem(raiz->esquerda);
+        travessia_preordem(raiz->direita);
+    }
+}
+
+void travessia_posordem(noa_t* raiz) {
+    if (raiz != NULL) {
+        travessia_posordem(raiz->esquerda);
+        travessia_posordem(raiz->direita);
+        printf("%d ", raiz->dado);
+    }
+}
 //destruir
 //travessia_preordem
 //travessia_emordem

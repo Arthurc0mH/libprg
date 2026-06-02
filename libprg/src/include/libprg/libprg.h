@@ -90,6 +90,8 @@ noa_t* criar_noa(int dado);
 noa_t* adicionar_noa(noa_t* raiz, int dado);
 noa_t* remover_noa(int dado, noa_t* no);
 void travessia_emordem(noa_t* raiz);
+void travessia_preordem(noa_t* raiz);
+void travessia_posordem(noa_t* raiz);
 
 // == Árvore AVL ==
 typedef struct noavl noavl_t;
