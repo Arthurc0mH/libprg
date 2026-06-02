@@ -80,7 +80,11 @@ void travessia_posordem(noa_t* raiz) {
         printf("%d ", raiz->dado);
     }
 }
-//destruir
-//travessia_preordem
-//travessia_emordem
-//travessia_posordem
+
+void destrur_arvore(noa_t* raiz) {
+    if (raiz != NULL) {
+        destrur_arvore(raiz->esquerda);
+        destrur_arvore(raiz->direita);
+        free(raiz);
+    }
+}
