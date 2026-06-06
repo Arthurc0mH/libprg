@@ -56,7 +56,7 @@ int busca_binaria(lista_linear_t* lista, int valor) {
 }
 
 int buscar(lista_linear_t* lista, int valor) {
-    if (lista->ordenada == true) {
+    if (lista->ordenada == false) {
         return busca_linear(lista, valor);
     }else {
         return busca_binaria(lista, valor);
