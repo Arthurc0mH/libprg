@@ -50,6 +50,10 @@ lista_linear_t* criar_lista(bool ordenada);
 void inserir_lista(lista_linear_t* lista, int valor);
 int busca_linear(lista_linear_t* lista, int valor);
 int busca_binaria(lista_linear_t* lista, int valor);
+int buscar(lista_linear_t* lista, int valor);
+int remover_lista(lista_linear_t* lista, int valor);
+bool lista_cheia(lista_linear_t* lista);
+void destruir_lista(lista_linear_t* lista);
 
 //=== LISTA ENCADEADA ===
 
@@ -58,7 +62,7 @@ typedef struct lista_encadeada lista_encadeada_t;
 
 no_t* criar_encadeada(int dado);
 void inserir_encadeada(lista_encadeada_t* lista, int dado);
-no_t* buscar(lista_encadeada_t* lista, int dado);
+no_t* buscar_encadeada(lista_encadeada_t* lista, int dado);
 bool remover_encadeada(lista_encadeada_t* lista, int dado);
 void destruir_encadeada(lista_encadeada_t* inicio);
 lista_encadeada_t* criar_lista_encadeada(bool ordenada);

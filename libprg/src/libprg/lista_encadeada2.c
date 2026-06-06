@@ -30,7 +30,7 @@ void inserir_encadeada(lista_encadeada_t* lista, int dado) {
     lista->inicio = novo;
 }
 
-no_t* buscar(lista_encadeada_t* lista, int dado) {
+no_t* buscar_encadeada(lista_encadeada_t* lista, int dado) {
     no_t* atual = lista->inicio;
 
     while (atual != NULL) {
@@ -39,7 +39,6 @@ no_t* buscar(lista_encadeada_t* lista, int dado) {
     }
     return NULL;
 }
-
 bool remover_encadeada(lista_encadeada_t* lista, int dado) {
     no_t* atual = lista->inicio;
     no_t* anterior = NULL;

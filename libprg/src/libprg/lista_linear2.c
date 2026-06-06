@@ -25,7 +25,8 @@ void inserir_lista(lista_linear_t* lista, int valor) {
         }
         lista->tamanho++;
     }else {
-        //ordenar
+        lista->elementos[lista->tamanho] = valor;
+        lista->tamanho++;
     }
 }
 
@@ -86,11 +87,7 @@ void destruir_lista(lista_linear_t* lista) {
     free(lista->elementos);
     free(lista);
 }
-//inserir
-//remover
-//buscar linear
-//busca binaria
+
 //alterar
 //ordenar
 //combinar
-//destruir
