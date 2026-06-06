@@ -14,19 +14,25 @@ lista_linear_t* criar_lista(bool ordenada){
 }
 
 void inserir_lista(lista_linear_t* lista, int valor) {
-    if (lista->ordenada == true) {
-        int aux = 0;
-        for (int i = 0; i < lista->tamanho; i++) {
-            if (valor <= lista->elementos[i]) {
-                aux = lista->elementos[i];
-                lista->elementos[i] = valor;
-                valor = aux;
+    if (lista->tamanho < lista->capacidade){
+        if (lista->ordenada == true) {
+            int aux = 0;
+            for (int i = 0; i < lista->tamanho; i++) {
+                if (valor <= lista->elementos[i]) {
+                    aux = lista->elementos[i];
+                    lista->elementos[i] = valor;
+                    valor = aux;
+                }
             }
+            lista->tamanho++;
+        }else {
+            lista->elementos[lista->tamanho] = valor;
+            lista->tamanho++;
         }
-        lista->tamanho++;
-    }else {
-        lista->elementos[lista->tamanho] = valor;
-        lista->tamanho++;
+    }else{
+        lista->capacidade *= 2;
+        lista->elementos = realloc(lista->elementos, lista->capacidade * sizeof(int));
+        inserir_lista(lista, valor);
     }
 }
 
