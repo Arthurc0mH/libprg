@@ -64,15 +64,23 @@ int buscar(lista_linear_t* lista, int valor) {
 }
 
 int remover_lista(lista_linear_t* lista, int valor) {
-    int posicao = buscar(lista, valor);
-    if (posicao == -1) return -1;
-    int aux = 0;
-    for (int i = posicao; i < lista->tamanho; i++) {
-        aux = lista->elementos[i+1];
-        lista->elementos[i] = aux;
+    if (lista->ordenada == true){
+        int posicao = buscar(lista, valor);
+        if (posicao == -1) return -1;
+        int aux = 0;
+        for (int i = posicao; i < lista->tamanho; i++) {
+            aux = lista->elementos[i+1];
+            lista->elementos[i] = aux;
+        }
+        lista->tamanho--;
+        return 1;
+    }else{
+        int posicao = buscar(lista, valor);
+        if (posicao == -1) return -1;
+        lista->elementos[posicao] = lista->elementos[lista->tamanho];
+        lista->tamanho--;
+        return 1;
     }
-    lista->tamanho--;
-    return 1;
 }
 
 bool lista_cheia(lista_linear_t* lista) {
