@@ -1,38 +1,46 @@
 #include <stdlib.h>
 #include "libprg/libprg.h"
 
-#define CAPACIDADE_INICIAL 10
-
-lista_linear_t* criar_lista(bool ordenada){
+lista_linear_t* criar_lista(bool ordenada, int capacidade){
     lista_linear_t* lista = malloc(sizeof(lista_linear_t));
-    lista->elementos = malloc(sizeof(int) * CAPACIDADE_INICIAL);
+    lista->elementos = malloc(sizeof(int) * capacidade);
     lista->tamanho = 0;
-    lista->capacidade = CAPACIDADE_INICIAL;
+    lista->capacidade = capacidade;
     lista->ordenada = ordenada;
 
     return lista;
 }
 
 void inserir_lista(lista_linear_t* lista, int valor) {
-    if (lista->tamanho < lista->capacidade){
-        if (lista->ordenada == true) {
-            int aux = 0;
-            for (int i = 0; i < lista->tamanho; i++) {
-                if (valor <= lista->elementos[i]) {
-                    aux = lista->elementos[i];
-                    lista->elementos[i] = valor;
-                    valor = aux;
-                }
-            }
-            lista->tamanho++;
-        }else {
-            lista->elementos[lista->tamanho] = valor;
-            lista->tamanho++;
-        }
-    }else{
+    if (lista == NULL) {
+        return;
+    }
+
+    if (lista->tamanho >= lista->capacidade) {
         lista->capacidade *= 2;
-        lista->elementos = realloc(lista->elementos, lista->capacidade * sizeof(int));
-        inserir_lista(lista, valor);
+
+        int* novo = realloc(lista->elementos, lista->capacidade * sizeof(int));
+
+        if (novo == NULL) {
+            return;
+        }
+
+        lista->elementos = novo;
+    }
+
+    if (lista->ordenada == true) {
+        int i = lista->tamanho - 1;
+
+        while (i >= 0 && valor < lista->elementos[i]) {
+            lista->elementos[i + 1] = lista->elementos[i];
+            i--;
+        }
+
+        lista->elementos[i + 1] = valor;
+        lista->tamanho++;
+    } else {
+        lista->elementos[lista->tamanho] = valor;
+        lista->tamanho++;
     }
 }
 
@@ -47,7 +55,7 @@ int busca_linear(lista_linear_t* lista, int valor) {
 }
 
 int busca_binaria(lista_linear_t* lista, int valor) {
-    int inicio = 1; int fim = lista->tamanho;
+    int inicio = 0; int fim = lista->tamanho  -1;
     while (inicio <= fim) {
         int meio = inicio + (fim - inicio) / 2;
         if (lista->elementos[meio] == valor) {
@@ -74,16 +82,15 @@ int remover_lista(lista_linear_t* lista, int valor) {
         int posicao = buscar(lista, valor);
         if (posicao == -1) return -1;
         int aux = 0;
-        for (int i = posicao; i < lista->tamanho; i++) {
-            aux = lista->elementos[i+1];
-            lista->elementos[i] = aux;
+        for (int i = posicao; i < lista->tamanho -1; i++) {
+            lista->elementos[i] = lista->elementos[i+1];
         }
         lista->tamanho--;
         return 1;
     }else{
         int posicao = buscar(lista, valor);
         if (posicao == -1) return -1;
-        lista->elementos[posicao] = lista->elementos[lista->tamanho];
+        lista->elementos[posicao] = lista->elementos[lista->tamanho -1];
         lista->tamanho--;
         return 1;
     }
@@ -93,6 +100,14 @@ bool lista_cheia(lista_linear_t* lista) {
     if (lista->tamanho == lista->capacidade) {
         return true;
     }else {
+        return false;
+    }
+}
+
+bool lista_vazia(lista_linear_t* lista) {
+    if (lista->tamanho == 0) {
+        return true;
+    }else{
         return false;
     }
 }

@@ -46,14 +46,16 @@ typedef struct lista_linear{
     bool ordenada;
 }lista_linear_t;
 
-lista_linear_t* criar_lista(bool ordenada);
+lista_linear_t* criar_lista(bool ordenada, int capacidade);
 void inserir_lista(lista_linear_t* lista, int valor);
 int busca_linear(lista_linear_t* lista, int valor);
 int busca_binaria(lista_linear_t* lista, int valor);
 int buscar(lista_linear_t* lista, int valor);
 int remover_lista(lista_linear_t* lista, int valor);
 bool lista_cheia(lista_linear_t* lista);
+bool lista_vazia(lista_linear_t* lista);
 void destruir_lista(lista_linear_t* lista);
+
 
 //=== LISTA ENCADEADA ===
 
