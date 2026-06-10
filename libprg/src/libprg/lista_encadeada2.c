@@ -21,16 +21,21 @@ no_t* criar_encadeada(int dado) {
 lista_encadeada_t* criar_lista_encadeada(bool ordenada) {
     lista_encadeada_t* lista = malloc(sizeof(lista_encadeada_t));
     lista->inicio = NULL;
+    lista->ordenada = ordenada;
     return lista;
 }
 
 void inserir_encadeada(lista_encadeada_t* lista, int dado) {
+    if (lista == NULL) return;
     no_t* novo = criar_encadeada(dado);
+    if (novo == NULL) return;
     novo->proximo = lista->inicio;
     lista->inicio = novo;
 }
 
 no_t* buscar_encadeada(lista_encadeada_t* lista, int dado) {
+    if (lista == NULL) return NULL;
+
     no_t* atual = lista->inicio;
 
     while (atual != NULL) {
@@ -40,6 +45,8 @@ no_t* buscar_encadeada(lista_encadeada_t* lista, int dado) {
     return NULL;
 }
 bool remover_encadeada(lista_encadeada_t* lista, int dado) {
+    if (lista == NULL) return false;
+
     no_t* atual = lista->inicio;
     no_t* anterior = NULL;
 
@@ -57,6 +64,7 @@ bool remover_encadeada(lista_encadeada_t* lista, int dado) {
 }
 
 void destruir_encadeada(lista_encadeada_t* lista) {
+    if (lista == NULL) return;
     no_t* atual = lista->inicio;
     while (atual != NULL) {
         no_t* proximo = atual->proximo;
