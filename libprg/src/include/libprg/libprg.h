@@ -89,6 +89,8 @@ bool remover_encadeada_dupla(nod_t** inicio, int dado);
 
 int* bubble_sort(int* vetor, int tamanho);
 int* merge_sort(int* vetor, int esquerda, int direita);
+int* insertion_sort(int *vetor, int tamanho);
+int* selection_sort(int *vetor, int tamanho);
 
 // === Hash ===
 
