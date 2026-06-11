@@ -80,3 +80,24 @@ int* selection_sort(int *vetor, int tamanho){
     }
     return vetor;
 }
+
+int partition(int* vetor, int inicio, int fim){
+    int pivo = vetor[fim];
+    int i = inicio - 1;
+    for (int j = inicio; j < fim; j++){
+        if (vetor[j] <= pivo){
+            i++;
+            int aux = vetor[i];
+            vetor[i] = vetor[j];
+            vetor[j] = aux;
+        }
+    }
+}
+
+int* quick_sort(int* vetor, int inicio, int fim){
+    if (inicio < fim){
+        int pivo = partition(vetor, inicio, fim);
+        quick_sort(vetor, inicio, pivo - 1);
+        quick_sort(vetor, pivo + 1, fim);
+    }
+ }

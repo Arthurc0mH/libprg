@@ -91,6 +91,8 @@ int* bubble_sort(int* vetor, int tamanho);
 int* merge_sort(int* vetor, int esquerda, int direita);
 int* insertion_sort(int *vetor, int tamanho);
 int* selection_sort(int *vetor, int tamanho);
+int partition(int* vetor, int inicio, int fim);
+int* quick_sort(int* vetor, int inicio, int fim);
 
 // === Hash ===
 
