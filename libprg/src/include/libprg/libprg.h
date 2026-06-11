@@ -99,6 +99,8 @@ int* quick_sort(int* vetor, int inicio, int fim);
 typedef struct noh noh_t;
 typedef struct dicionario dicionario_t;
 dicionario_t* criar_dicionario(int m);
+int hash(char* chave, int m);
+int inserir_hash(dicionario_t* d, char* chave, int valor);
 
 // === Árvore binária ===
 
