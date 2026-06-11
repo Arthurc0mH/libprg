@@ -1,6 +1,6 @@
 #ifndef LIBPRG_LIBPRG_H
 #define LIBPRG_LIBPRG_H
-#define MAX_PILHA 100
+#define INT_MAX 1000000
 
 #include <stdbool.h>
 
@@ -60,7 +60,14 @@ void destruir_lista(lista_linear_t* lista);
 //=== LISTA ENCADEADA ===
 
 typedef struct no no_t;
-typedef struct lista_encadeada lista_encadeada_t;
+typedef struct no {
+    int dado;
+    no_t* proximo;
+}no_t;
+typedef struct lista_encadeada {
+    no_t* inicio;
+    bool ordenada;
+}lista_encadeada_t;
 
 no_t* criar_encadeada(int dado);
 void inserir_encadeada(lista_encadeada_t* lista, int dado);

@@ -1,16 +1,6 @@
 #include <stdlib.h>
 #include "libprg/libprg.h"
 
-typedef struct no {
-    int dado;
-    no_t* proximo;
-}no_t;
-
-typedef struct lista_encadeada {
-    no_t* inicio;
-    bool ordenada;
-}lista_encadeada_t;
-
 no_t* criar_encadeada(int dado) {
     no_t* no = malloc(sizeof(no_t));
     no->dado = dado;

@@ -51,3 +51,32 @@ int* merge(int* vetor, int esquerda, int meio, int direita) {
     }
     return vetor;
 }
+
+int* insertion_sort(int *vetor, int tamanho){
+    for (int i = 1; i < tamanho; i++){
+        int aux = vetor[i];
+        int j = i - 1;
+        while (j >= 0 && vetor[j] > aux){
+            vetor[j + 1] = vetor[j];
+            j--;
+        }
+        vetor[j + 1] = aux;
+    }
+    return vetor;
+}
+
+int* selection_sort(int *vetor, int tamanho){
+    for (int i = 0; i < tamanho; i++){
+        int menor = i;
+        for (int j = i + 1; j < tamanho; j++){
+            if (vetor[j] < vetor[menor]){
+                menor = j;
+            }
+        }
+        if (i != menor){
+            int aux = vetor[i];
+            vetor[i] = vetor[menor];
+        }
+    }
+    return vetor;
+}
