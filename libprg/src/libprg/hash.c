@@ -7,7 +7,7 @@ typedef struct noh noh_t;
 
 typedef struct noh {
     char* chave;
-    int valor;
+    long valor;
     noh_t* proximo;
 }noh_t;
 
