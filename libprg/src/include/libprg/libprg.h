@@ -96,7 +96,11 @@ int* quick_sort(int* vetor, int inicio, int fim);
 
 // === Hash ===
 
-typedef struct noh noh_t;
+typedef struct noh {
+    char* chave;
+    long valor;
+    noh_t* proximo;
+}noh_t;
 typedef struct dicionario {
     int tamanho;
     noh_t** vetor;

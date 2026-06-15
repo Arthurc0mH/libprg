@@ -3,14 +3,6 @@
 #include <stdio.h>
 #include "libprg/libprg.h"
 
-typedef struct noh noh_t;
-
-typedef struct noh {
-    char* chave;
-    long valor;
-    noh_t* proximo;
-}noh_t;
-
 dicionario_t* criar_dicionario(int m) {
     if (m < 1) return NULL;
 
