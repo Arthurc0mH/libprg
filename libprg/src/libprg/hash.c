@@ -11,11 +11,6 @@ typedef struct noh {
     noh_t* proximo;
 }noh_t;
 
-typedef struct dicionario {
-    int tamanho;
-    noh_t** vetor;
-}dicionario_t;
-
 dicionario_t* criar_dicionario(int m) {
     if (m < 1) return NULL;
 
