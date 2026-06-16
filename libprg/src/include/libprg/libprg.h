@@ -111,7 +111,7 @@ typedef struct dicionario {
 dicionario_t* criar_dicionario(int m);
 int hash(char* chave, int m);
 int inserir_hash(dicionario_t* d, char* chave, int valor);
-int buscar_hash(dicionario_t* d, char* chave, int valor);
+int buscar_hash(dicionario_t* d, char* chave, int* valor);
 int remover_hash(dicionario_t* d, char* chave);
 void destruir_dicionario(dicionario_t* d);
 void imprimir_dicionario(dicionario_t* d);
