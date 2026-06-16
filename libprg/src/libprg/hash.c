@@ -27,7 +27,7 @@ int hash(char* chave, int m) {
     return soma % m;
 }
 
-int inserir_hash(dicionario_t* d, char* chave, long valor) {
+int inserir_hash(dicionario_t* d, char* chave, int valor) {
     if (d == NULL || chave == NULL) return 1;
 
     int indice = hash(chave, d->tamanho);
@@ -59,7 +59,7 @@ int inserir_hash(dicionario_t* d, char* chave, long valor) {
     return 0;
 }
 
-int buscar_hash(dicionario_t* d, char* chave, long* valor) {
+int buscar_hash(dicionario_t* d, char* chave, int* valor) {
     if (d == NULL || chave == NULL || valor == NULL) return 1;
 
     int indice = hash(chave, d->tamanho);
