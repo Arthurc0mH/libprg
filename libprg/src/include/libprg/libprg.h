@@ -125,7 +125,7 @@ noa_t* remover_noa(int dado, noa_t* no);
 void travessia_emordem(noa_t* raiz);
 void travessia_preordem(noa_t* raiz);
 void travessia_posordem(noa_t* raiz);
-void destrur_arvore(noa_t* raiz);
+void destruir_arvore(noa_t* raiz);
 
 // == Árvore AVL ==
 typedef struct noavl noavl_t;
