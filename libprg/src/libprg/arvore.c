@@ -83,8 +83,8 @@ void travessia_posordem(noa_t* raiz) {
 
 void destruir_arvore(noa_t* raiz) {
     if (raiz != NULL) {
-        destrur_arvore(raiz->esquerda);
-        destrur_arvore(raiz->direita);
+        destruir_arvore(raiz->esquerda);
+        destruir_arvore(raiz->direita);
         free(raiz);
     }
 }
