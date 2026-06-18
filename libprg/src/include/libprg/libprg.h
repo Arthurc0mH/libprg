@@ -1,6 +1,5 @@
 #ifndef LIBPRG_LIBPRG_H
 #define LIBPRG_LIBPRG_H
-#define INT_MAX 1000000
 
 #include <stdbool.h>
 
