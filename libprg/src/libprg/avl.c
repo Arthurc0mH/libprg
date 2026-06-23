@@ -129,3 +129,11 @@ noavl_t* remover_noavl(int dado, noavl_t* raiz) {
     }
     return raiz;
 }
+
+int avl_posordem(noavl_t* raiz) {
+    if (raiz != NULL) {
+        avl_posordem(raiz->esquerda);
+        avl_posordem(raiz->direita);
+        return raiz->dado;
+    }
+}
