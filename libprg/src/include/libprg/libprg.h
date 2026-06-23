@@ -139,5 +139,6 @@ noavl_t* rotacao_dupla_esquerda(noavl_t* v);
 noavl_t* balancear(noavl_t* v) ;
 noavl_t* remover_noavl(int dado, noavl_t* raiz);
 int avl_posordem(noavl_t* raiz);
+void destruir_avl(noavl_t* raiz);
 
 #endif

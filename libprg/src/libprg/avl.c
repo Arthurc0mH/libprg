@@ -137,3 +137,11 @@ int avl_posordem(noavl_t* raiz) {
         return raiz->dado;
     }
 }
+
+void destruir_avl(noavl_t* raiz) {
+    if (raiz != NULL) {
+        destruir_avl(raiz->esquerda);
+        destruir_avl(raiz->direita);
+        free(raiz);
+    }
+}
